@@ -570,9 +570,65 @@
         }
     </style>
 
+    <section class="w-full max-w-6xl mx-auto my-20 px-4 reveal">
+    <style>
+        @keyframes waveGlideRight {
+            0%, 100% {
+                transform: translate3d(0px, 0px, 0);
+                border-color: rgba(255, 255, 255, 0.14);
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+            }
+            45% {
+                transform: translate3d(18px, -7px, 0);
+                border-color: rgba(255, 255, 255, 0.38);
+                box-shadow: -8px 18px 32px rgba(0, 0, 0, 0.7), 0 0 22px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .floating-section-card {
+            background: rgba(255, 255, 255, 0.025);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 26px;
+            transition: border-color 0.4s ease, background 0.4s ease;
+            overflow: hidden;
+        }
+
+        .floating-section-card:hover {
+            background: rgba(255, 255, 255, 0.045);
+            border-color: rgba(255, 255, 255, 0.24);
+        }
+
+        .floating-mini-box {
+            flex: 0 0 135px;
+            height: 155px;
+            border-radius: 18px;
+            border: 1px dashed rgba(255, 255, 255, 0.22);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.065) 0%, rgba(12, 12, 12, 0.94) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 14px;
+            animation: waveGlideRight 3.2s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease;
+        }
+
+        @media (min-width: 1024px) {
+            .floating-mini-box {
+                flex: 0 0 155px;
+                height: 180px;
+            }
+        }
+
+        .floating-section-card:hover .floating-mini-box {
+            transform: translate3d(22px, -6px, 0);
+            border-color: rgba(255, 255, 255, 0.45);
+        }
+    </style>
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
-        
-        <!-- Box 1: Gallery at ___ -->
         <div class="floating-section-card group">
             <div class="mb-5">
                 <h3 class="text-sm md:text-base font-light tracking-[0.25em] uppercase text-white/95">Gallery at ___</h3>
@@ -590,7 +646,6 @@
             </div>
         </div>
 
-        <!-- Box 2: Recent Pictures __ -->
         <div class="floating-section-card group">
             <div class="mb-5">
                 <h3 class="text-sm md:text-base font-light tracking-[0.25em] uppercase text-white/95">Recent Pictures __</h3>
@@ -608,7 +663,6 @@
             </div>
         </div>
 
-        <!-- Box 3: Fashion loooks -->
         <div class="floating-section-card group">
             <div class="mb-5">
                 <h3 class="text-sm md:text-base font-light tracking-[0.25em] uppercase text-white/95">Fashion loooks</h3>
@@ -626,7 +680,6 @@
             </div>
         </div>
 
-        <!-- Box 4: Just me having fun! -->
         <div class="floating-section-card group">
             <div class="mb-5">
                 <h3 class="text-sm md:text-base font-light tracking-[0.25em] uppercase text-white/95">Just me having fun!</h3>
@@ -643,8 +696,8 @@
                 </div>
             </div>
         </div>
-
     </div>
+</section>
 
   
  <div class="video-feature-box reveal">
